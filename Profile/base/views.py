@@ -59,9 +59,17 @@ def getMovies(user_id):
     top_20_recommendations = predicted_ratings[:20]
     # sonst matchen titel net
     top_20_recommendations["title"] = top_20_recommendations["title"].str.replace(r"\(\d{4}\)", "").str.strip()
+    # TODO test
+   # top_20_recommendations["title"] = top_20_recommendations["title"].str.replace(r"[^a-zA-Z0-9 ]", "")
+
+    df = pd.read_csv('movies_metadata.csv', low_memory=False)
+
+    #df["title"] = df["title"].str.replace(r"[^a-zA-Z0-9 ]", "")
+    #top_20_recommendations["title"] = top_20_recommendations["title"].str.lower()
+    #df["title"] = df["title"].str.lower()
 
     print(top_20_recommendations)
-    df = pd.read_csv('movies_metadata.csv', low_memory=False)
+
     #df.rename(columns={'id': 'movie_id'})
     print(df.columns)
    # print(top_20_recommendations.columns)
