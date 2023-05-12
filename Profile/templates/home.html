@@ -1,0 +1,26 @@
+{% include 'navbar.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles/style.css' %}">
+<title>Home</title>
+<section class="home">
+		<center>
+			<font size="6">
+
+<p>Welcome to the recommender Webpage. </p>
+
+			</font>
+			<img src="{% static 'images/Profile_img.png' %}" width="200" height="200">
+			<font size="4">
+
+<p>Enter the id of the user you want recommendations for. If you enter an invalid user id you will stay on this page.
+Otherwise after clicking on submit you will reach the page containing recommendations.</p>
+<form action="/projects">
+  <label for="user">User Id:</label>
+  <input type="text" id="user" name="user"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+			</font>
+		</center>
+</section>
+

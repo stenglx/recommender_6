@@ -1,0 +1,69 @@
+{% include 'navbar.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles/style.css' %}">
+<title>Projects</title>
+<section class="project-area">
+    <center>
+        <font size="6">
+
+            <p>PROJECTS of User {{ user_id }}</p>
+
+        </font>
+        <div id="project" class="project-item">
+            <h2>PROJECT 1 NAME</h2>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Vestibulum dignissim, sapien et efficitur vulputate,
+                felis blandit metus, vitae eleifend nisl justo sed nunc.
+                Sed ut nunc malesuada, scelerisque mauris sed, hendrerit neque.
+                Morbi eget nisl non tellus posuere iaculis.
+                Nunc ut tincidunt est, a tempus tortor. Mauris lobortis felis elit,
+                quis euismod urna lacinia vitae. Morbi interdum diam in faucibus finibus.
+                Sed pellentesque sem a diam rhoncus, eu semper neque efficitur. </p>
+
+        </div>
+        <div id="project" class="project-item">
+            <h2>PROJECT 2 NAME </h2>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Vestibulum dignissim, sapien et efficitur vulputate,
+                felis blandit metus, vitae eleifend nisl justo sed nunc.
+                Sed ut nunc malesuada, scelerisque mauris sed, hendrerit neque.
+                Morbi eget nisl non tellus posuere iaculis.
+                Nunc ut tincidunt est, a tempus tortor. Mauris lobortis felis elit,
+                quis euismod urna lacinia vitae. Morbi interdum diam in faucibus finibus.
+                Sed pellentesque sem a diam rhoncus, eu semper neque efficitur. </p>
+
+        </div>
+        </div>
+       <!-- <ul>
+            {% for movie in movies_s %}
+                <li>{{ movie.title }}</li>
+            {% endfor %}
+        </ul>-->
+    <div>
+  {{ movies|safe }}
+</div>
+   <!-- <table>
+    <thead>
+        <tr>
+            <th>Movie_Id</th>
+            <th>Title</th>
+            <th>Genres</th>
+            <th>Predicted_Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for movie in movies %}
+        <tr>
+            <td>{{ movie.movie_id }}</td>
+            <td>{{ movie.title }}</td>
+            <td>{{ movie.genres }}</td>
+            <td>{{ movie.predicted_rating }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>-->
+    </center>
+</section>
+
