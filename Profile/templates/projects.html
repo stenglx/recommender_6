@@ -41,8 +41,30 @@
                 <li>{{ movie.title }}</li>
             {% endfor %}
         </ul>-->
+
+<table>
+  <tr>
+    <th>Movie ID</th>
+    <th>Title</th>
+    <th>Genres</th>
+    <th>Predicted Rating</th>
+    <th>Overview</th>
+    <th>Poster Path</th>
+  </tr>
+  {% for movie in movies %}
+  <tr>
+    <td>{{ movie.movie_id }}</td>
+    <td>{{ movie.title }}</td>
+    <td>{{ movie.genres }}</td>
+    <td>{{ movie.predicted_rating }}</td>
+    <td>{{ movie.overview }}</td>
+    <td>https://image.tmdb.org/t/p/w185{{ movie.poster_path }}</td>
+  <td><img src="https://image.tmdb.org/t/p/w92{{ movie.poster_path }}" alt="{{ movie.title }}"></td>
+  </tr>
+  {% endfor %}
+</table>
     <div>
-  {{ movies|safe }}
+  {{ movies_html|safe }}
 </div>
    <!-- <table>
     <thead>

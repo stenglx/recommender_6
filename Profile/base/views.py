@@ -12,12 +12,10 @@ def projects(request):
     try:
         user_id = int(user_id)
         recommended_movies = getMovies(user_id)
-        movies_list = list(recommended_movies)
-        print(recommended_movies.to_string())
-        print(movies_list)
-        print(type(movies_list))
-        print(type(recommended_movies))
-        context = {'user_id': user_id, 'movies': recommended_movies.to_html()}
+        print('*****************')
+        print(recommended_movies.to_dict(orient="records"),)
+
+        context = {'user_id': user_id, 'movies': recommended_movies.to_dict(orient="records"), 'movies_html': recommended_movies.to_html()}#.to_html()}
 
         return render(request, "projects.html", context)
     except ValueError:
@@ -59,7 +57,7 @@ def getMovies(user_id):
      #   index=False))
     #print(predicted_ratings[['title', 'genres', 'predicted_rating']][:20])
     top_20_recommendations = predicted_ratings[:20]
-    # sonst matchen titel net 
+    # sonst matchen titel net
     top_20_recommendations["title"] = top_20_recommendations["title"].str.replace(r"\(\d{4}\)", "").str.strip()
 
     print(top_20_recommendations)
